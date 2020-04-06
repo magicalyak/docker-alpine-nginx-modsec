@@ -1,0 +1,11 @@
+FROM alpine
+
+RUN set -ex; \
+	apk update; \
+	apk add --no-cache curl
+
+WORKDIR /app
+
+ADD test.sh /app/test.sh
+
+CMD ["ash", "test.sh"]

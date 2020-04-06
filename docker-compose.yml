@@ -2,10 +2,10 @@ version: "3"
 
 services:
   nginx:
-    image: andrewnk/alpine-nginx-modsec
-    container_name: nginx
+    image: magicalyak/nginx-modsec
+    container_name: nginx-modsec
     ports:
-      - 80:80
+      - 81:81
     networks:
       - web
     volumes:
