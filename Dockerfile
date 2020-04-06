@@ -62,6 +62,9 @@ RUN echo 'Cloning Modsec Nginx Connector, GeoIP, ModSec OWASP Rules, and downloa
 RUN echo 'Installing Nginx Modules' && \
     (cd "/opt/nginx-$NGINX_VERSION" && \
         ./configure --with-compat \
+		    --with-http_stub_status_module \
+			--with-stream \
+			--with-threads \
             --add-dynamic-module=../ModSecurity-nginx \
             --add-dynamic-module=../ngx_http_geoip2_module && \
         make modules \
